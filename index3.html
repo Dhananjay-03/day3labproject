@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>question 3</title>
+    </head>
+    <body>
+        <p id="hello"></p>
+        <p id="aa"></p>
+        <p>Element to be searched is :</p>
+        <p id="bb"></p>
+        <input id="hii" disabled>
+        <p id="abc"></p>
+    </body>
+    <script>
+        var l="The unsorted array is ";
+        document.getElementById("hello").innerHTML=search(prompt("enter the number of elements"));
+        document.getElementById("hello").innerHTML = l;
+        function search(n)
+        {
+            var arr=[];
+            var i;
+            for(i=0;i<n;i++)
+            {
+                arr[i]=prompt("Enter the number");
+            }
+            document.getElementById("aa").innerHTML=arr;
+            var s=prompt("Enter the number to be searched");
+            var p="Position is ";
+            document.getElementById("bb").innerHTML=s;
+            var q="Not available";
+            var y="The sorted array is";
+            var b=0;
+
+            for(var j=0;j<n;j++)
+            {
+                if(arr[j]==s)
+                {
+                    var q=j+1;
+                    document.getElementById("hii").value=p.concat(q);
+                    b=1;
+                }
+            }
+            console.log(q);
+            if(b==0)
+            {
+                document.getElementById("hii").value=q;
+            }
+            arr.sort(function(a,b){ return a-b});
+            document.getElementById("abc").innerHTML=y.concat(arr);
+            //console.log(arr);
+        }
+    </script>
+</html>

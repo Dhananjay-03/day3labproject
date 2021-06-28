@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title></title>
+</head>
+<body>
+
+    <label for="email">Email: </label>
+    <input type="text" id="email">
+    <br>
+    <label for="name">Name: </label>
+    <input type="text" id="name">
+    <br>
+    <label for="age">Age: </label>
+    <input type="number" id="age">
+    <br>
+    <input type="submit" onclick="func()">
+
+    <script>
+        function func(){
+            var email = document.getElementById('email').value;
+            var age = document.getElementById('age').value;
+            var name = document.getElementById('name').value;
+            var msg = '';
+            if (email === ''){
+                msg += 'Email is empty';
+            }
+            else if (email.indexOf('@') === -1) {
+                msg += 'Email does not have @';
+            }
+            if (age === '')
+                msg += '\nAge is empty';
+            else if (age < 1 || age > 100){
+                msg += '\nAge must be between 1 and 100';
+            }
+            if (name === '') {
+                msg += '\nName is empty'
+            }
+            else if (name.length > 10 ){
+                msg += '\nName should be less than 10';
+            }
+            if(msg != ''){
+                alert(msg)
+            }else{
+                msg += 'Email: '+email+'\nName: '+name+'\nAge: '+age;
+                alert(msg)
+            }
+        }
+    </script>
+</body>
+</html>

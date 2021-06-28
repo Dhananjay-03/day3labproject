@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form validation</h2>
+    <label for="name">Name: </label>
+    <input type="text" id="name">
+    <label for="age">Age: </label>
+    <input type="text" id="age">
+    <input type="submit" id="submit" onclick="func()">
+
+    <script>
+        function func(){
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var msg = '';
+            if(name === '')
+                msg += 'Name is empty!!';
+            else{
+                for(var i=0;i<name.length;i++){
+                    if(name[i] > '0' && name [i] < '9'){
+                        msg += 'Name has some numbers!!'
+                        break;
+                    }
+                }
+            }
+            // var re = /^[A-Za-z]+$/;
+            // var hasNumber = /^[0-9][.]?[0-9]$/;
+            if(age === '')
+                msg += '\nAge is empty!!'
+            else{
+                for(var i=0;i<age.length;i++){
+                    if(age[i] < '0' || age[i] > '9'){
+                        msg += '\nAge has some characters!!'
+                        break;
+                    }
+                }
+            }
+            if(msg === ''){
+                msg += 'Validation successful \nName: '+name+'\nAge: '+age;
+                alert(msg);
+            }else{
+                alert(msg);
+            }
+
+        }
+    </script>
+</body>
+</html>

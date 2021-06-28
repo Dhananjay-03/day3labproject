@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <p>
+            Select one from the given options:
+            <select onchange="getName()" id="select1">
+                <option></option>
+                <option value="shivam">shivam </option>
+                <option value="ram">ram</option>
+                <option value="ravi">ravi</option>
+                <option value="anshu">anshu</option>
+
+            </select>
+
+
+
+        <input id="op" disabled>
+        <script type="text/javascript">
+            var arr=[];
+            arr["shivam"]="9137222121";
+            arr["ram"]="8564281945";
+            arr["ravi"]="9568264352";
+
+            arr["anshu"]="8509600221";
+
+            function getName(){
+                selectElement=document.querySelector('#select1');
+                output =
+                    selectElement.options[selectElement.selectedIndex].value;
+                document.getElementById("op").value=arr[output];
+
+
+            }
+            </script>
+    </body>
+</html>
